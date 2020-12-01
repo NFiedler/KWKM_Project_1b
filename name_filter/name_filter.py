@@ -14,6 +14,9 @@ class NameFilter:
         rating = 0
         first_name_finds = []
         surname_finds = []
+        text = text.replace('\n', ' ')
+        text = text.replace('-', ' ')
+
         words = text.split(' ')
         for i, word in enumerate(words):
             found = False
@@ -41,7 +44,6 @@ class NameFilter:
                         print(f'found first name \"{first_name_find[1]}\" followed by surname \"{first_name_find_b[1]}\"')
                     rating += 0.2
             if len(words) > first_name_find[0] + 1:
-                print('a')
                 if re.match('[A-Z]\.', words[first_name_find[0]+1]): # searching for Capital letter and dot (Jonas H.)
                     rating += 0.2
         for surname_find in surname_finds:
