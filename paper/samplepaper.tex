@@ -111,16 +111,45 @@ In unserer Implementation wird dabei ein Dictionary Look-Up verwendet.
 % todo cite dictionary look up
 Das bedeutet, dass wir ein Wörterbuch an möglichen Namen haben.
 Dann analysieren wir die Kommentare und vergleichen die einzelnen Worte mit den Einträgen aus dem Wörterbuch.
+Wir verwenden dafür zwei Wörterbücher.
+Eines für mögliche Vornamen und eines Für Nachnamen.
+%todo cite die github repos wo wir sie her haben?
 Wenn das System nun einen Namen findet, dann wird ein Wert erhöht, der die Wahrscheinlichkeit angibt, dass in dem Kommentar ein Name auftaucht.
 
 Wenn wir einen Namen erkannt haben, dann schauen wir ob direkt vor oder nach dem Namen noch ein Name erkannt wird.
 Dies ist relevant, falls Nutzer ihren Vor und Nachnamen oder mehrere ihrer Vornamen angeben. Wenn z.B. ein Kommentar mit dem Namen unterschrieben wird, dann schreiben die Nutzer häufig ihren vollen Namen inklusive Vornamen und Nachnamen.
 Deshalb wird dann der Wert für die Wahrscheinlichkeit weiter gesteigert, da durch zwei aufeinander folgende Namen die Wahrscheinlichkeit für eine falsch-positive Erkennung deutlich gesenkt wird.
-\section{Evaluation}
+% todo human in the loop
+\subsection{Erkennung von relevanten Schlagworten}
+Um relevante Schlagwörter zu finden, treffen wir die Annahme, dass mehrere Menschen denen ein ähnliches Thema wichtig ist auch die gleichen Begriffe nutzen.
+Wenn z.B. viele Menschen wert darauf legen, dass ein Restaurant erhalten werden soll, dann würde man möglicherweise häufiger den Substring "Restaurant <name> muss erhalten bleiben" finden.
 
+Deshalb suchen wir nach N-Grams in den Texten.
+Ein N-Gram ist eine Wortfolge von N Wörtern.
+Mit unserem Ansatz zählen wir wie oft jedes N-Gram vorkommt in den Kommentaren.
+Die häufigsten N-Gramme sind dann die wichtigsten Schlagwörter und können jetzt prominent sowohl dem Moderator als auch dem Nutzer präsentiert werden.
+\section{Evaluation}
+\subsection{Datenschutz}
+Die Erkennung von Vornamen klappt gut, weil Vornamen selten Begriffe sind die im sonstigen Sprachgebrauch verwendet werden.
+Das sieht leider anders aus bei den Nachnamen.
+Da z.B. Bürger ein Nachname ist, kommt es in der Analyse relativ häufig zu falsch positiven Erkennungen.
+\subsection{Erkennung von relevanten Schlagworten}
+Die Erkennung der relevanten Schlagworte findet zwar Phrasen die häufig verwendet werden, aber sie haben häufig keinen direkten Bezug zu dem konkreten Thema.
+Zum Beispiel kann man die Phrase "Meine meinung ist[...]" häufiger finden.
+Dieses Beispiel hat leider keine besondere Relevanz für die Diskussion.
 \section{Erweiterungsmöglichkeiten}
 \subsection{Datenschutz}
-ergänzen um Rule-Based Approach % TODO satz schreiben und cite
+Man könnte den Dictionary based Ansatz ergänzen um einen Rule-Based Ansatz.
+Das könnte zum Beispiel so aussehen, dass man die Phrase "mit freundlichen Grüßen" erkennt, weil häufig nach einer solchen Phrase die Nutzer dann ihren Namen schreiben.
+Dies wäre natürlich keine sichere Erkennung, weil Nutzer auch nur mit dieser Grußformel ihren Kommentar beenden könnten, oder weil die Nutzer ein Pseudonym verwenden, dass wieder Datenschutzkonform wäre.
+% TODO cite rule base
 
+Um das Problem zu lösen, dass man häufig falsch-positive Erkennungen bei Nachnamen hat, könnte man darauf achten Nachnamen nur zu zählen, wenn sie direkt nach einem erkannten Vornamen stehen.
+\subsection{Erkennung von relevanten Schlagworten}
+% Inverse document frequency, aber dinge die überall vorgeschlagen werden, fliegen dann auch raus
+Um die Relevanz zu steigern von den erkannten Schlagwörtern, könnte man einen Ansatz wie die Inverse Document Frequency verwenden.
+% todo cite
+Damit würden wir alle anderen Verfahren der Bürgerbeteiligung analysieren und häufige Phrasen in diesen finden.
+Dann könnte man die Phrasen die im konkret betrachteten Verfahren gefunden unterschiedlich gewichten gewichten invers zu ihrer Häufigkeit in den allgemeinen Bürgerbeteiligungsprozessen. %häufige beschwerden
 
 \end{document}
