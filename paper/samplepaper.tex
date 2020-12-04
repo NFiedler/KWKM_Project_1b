@@ -119,7 +119,10 @@ Wenn das System nun einen Namen findet, dann wird ein Wert erhöht, der die Wahr
 Wenn wir einen Namen erkannt haben, dann schauen wir ob direkt vor oder nach dem Namen noch ein Name erkannt wird.
 Dies ist relevant, falls Nutzer ihren Vor und Nachnamen oder mehrere ihrer Vornamen angeben. Wenn z.B. ein Kommentar mit dem Namen unterschrieben wird, dann schreiben die Nutzer häufig ihren vollen Namen inklusive Vornamen und Nachnamen.
 Deshalb wird dann der Wert für die Wahrscheinlichkeit weiter gesteigert, da durch zwei aufeinander folgende Namen die Wahrscheinlichkeit für eine falsch-positive Erkennung deutlich gesenkt wird.
-% todo human in the loop
+
+Um besser damit umgehen zu können, dass manche Namen möglicherweise nicht in jedem Kontext als Name zu deuten sind, haben wir noch einen Ansatz eingebaut, damit der Moderator die Gewichtung anpassen kann.
+Wenn ein false-positive erkannt wird, kann der Moderator so die Gewichtung des Namens anpassen.
+Dadurch kann z.B. langfristig der Fall verhindert werden, dass ein Nachname wie Bürger häufig als false-positive unsere Namenserkennung täuscht.
 \subsection{Erkennung von relevanten Schlagworten}
 Um relevante Schlagwörter zu finden, treffen wir die Annahme, dass mehrere Menschen denen ein ähnliches Thema wichtig ist auch die gleichen Begriffe nutzen.
 Wenn z.B. viele Menschen wert darauf legen, dass ein Restaurant erhalten werden soll, dann würde man möglicherweise häufiger den Substring "Restaurant <name> muss erhalten bleiben" finden.
