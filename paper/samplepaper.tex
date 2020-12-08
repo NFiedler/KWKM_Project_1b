@@ -37,12 +37,12 @@ Theresa Naß\inst{1} }
 \maketitle              % typeset the header of the contribution
 %
 \begin{abstract}
-Wir präsentieren zwei Systeme die einem Moderator im Bürgerbeteiligungsworkshop zu der städtebaulichen Planung unterstützen können.
+Wir präsentieren zwei Systeme, die einem Moderator im Bürgerbeteiligungsworkshop zu der städtebaulichen Planung unterstützen können.
 
 Einerseits tauchen in von den Bürgern geschriebenen Kommentaren häufig datenschutzrechtliche Informationen auf, die aufwendig von der Redaktion erst gefunden und entfernt werden müssen.
-Deshalb präsentieren wir eine Methode die Namen in den Kommentaren finden kann und den Moderator informieren kann.
+Deshalb präsentieren wir eine Methode, die Namen in den Kommentaren finden und den Moderator informieren kann.
 
-Andererseits werden sehr viele Kommentare geschrieben und die Moderatoren müssen alle lesen um einen Überblick über die Bürgermeinung zu bekommen. 
+Andererseits werden sehr viele Kommentare geschrieben und die Moderatoren müssen alle lesen, um einen Überblick über die Bürgermeinung zu bekommen.
 Um diesen Prozess zu erleichtern, stellen wir einen Ansatz vor, der die Kommentare analysiert und häufige Schlagwortkombinationen findet.
 
 \keywords{Kognitive Assistenzsysteme  \and Hybride Kollaborationsprozesse \and Städtebauplanung}
@@ -71,24 +71,24 @@ Um diesen Prozess zu erleichtern, stellen wir einen Ansatz vor, der die Kommenta
 		Durch die riesige Masse an Kommentaren die zu jedem Thema geschrieben werden, wird es schnell unübersichtlich für die Moderatoren.
 		Jeden Artikel gründlich zu lesen und zu analysieren kostet sehr viel Zeit.
 		
-		Deshalb wäre es hilfreich, wenn ein System automatisiert relevante Schlagwörter in den Kommentaren erfassen könnte und man so bereits auf den ersten Blick eine Zusammenfassung über die diskuttierten Themen sehen kann.
+		Deshalb wäre es hilfreich, wenn ein System automatisiert relevante Schlagwörter in den Kommentaren erfassen könnte und man so bereits auf den ersten Blick eine Zusammenfassung über die diskutierten Themen sehen kann.
 		Das ermöglicht auch den Bürgern zu sehen, was andere Bürger zu diesem Thema bewegt hat und hilft ihnen möglicherweise besseres Feedback zu formulieren, dass Punkte berücksichtigt die sonst nicht eingeflossen wären, weil sie nicht alle Kommentare gelesen hätten.
 
 \section{User Stories}
-	In diesem Kapitel wollen wir mögliche Szenarien beschreiben wie die von uns entwickelten Systeme die Moderatorenarbeit erleichtern können und damit erlauben, dass mehr Arbeitszeit in die Planung investiert werden kann.
+	In diesem Kapitel wollen wir mögliche Szenarien beschreiben, wie die von uns entwickelten Systeme die Moderatorenarbeit erleichtern können und damit erlauben, dass mehr Arbeitszeit in die Planung investiert werden kann.
 	
 	\subsection{Datenschutz}
 		Der Mitarbeiter der sich mit der Moderation beschäftigt ist normalerweise damit beschäftigt das Städtebauprojekt zu planen.
 		Dabei ist es auch wichtig, dass die Meinungen der Bürger mit einbezogen werden, deshalb ist es auch wichtig für diesen Mitarbeiter auch die Kommentare zu lesen.
 		
-		Während der Planung des Städtebauprojekts kommt nun ein neuer Kommentar an und der Mitarbeiter muss sich überlegen ob er diesen Kommentar sofort begutachten kann, damit der Nutzer sieht, dass der Kommentar angenommen wurde.
+		Während der Planung des Städtebauprojekts kommt nun ein neuer Kommentar an und der Mitarbeiter muss sich überlegen, ob er diesen Kommentar sofort begutachten kann, damit der Nutzer sieht, dass der Kommentar angenommen wurde.
 		Ansonsten könnte der Nutzer denken seine Meinung wurde zensiert und sich nicht ernst genommen fühlen.
-		Gleichzeitig bedeutet das aber auch, dass der Mitarbeiter seine Planung unterbrechen muss, sich mit dem Kontext des Kommentars befassen muss und dann sich wieder einarbeiten muss in die Planung mit der er eben beschäftigt war.
+		Gleichzeitig bedeutet das aber auch, dass der Mitarbeiter seine Planung unterbrechen muss, sich mit dem Kontext des Kommentars befassen muss und dann sich wieder einarbeiten muss in die Planung, mit der er eben beschäftigt war.
 		
 		Zum aktuellen Stand kann der Kommentar nämlich nicht einfach veröffentlicht werden, weil er gegen die Datenschutzgrundverordnung verstoßen könnte, weil identifizierende Informationen über Personen gesammelt werden könnten, ohne das dies Notwendig ist. 
 		Dies kann bereits passieren, indem ein Bürger einfach seinen Kommentar beendet mit einer Grußformel und seinem oder ihrem Namen.
 		
-		Durch den Einsatz unseres Systemes könnten neue Kommentare nun statt dessen im Hintergrund analysiert werden.
+		Durch den Einsatz unseres Systems könnten neue Kommentare nun stattdessen im Hintergrund analysiert werden.
 		Nur im Falle, dass ein Kommentar wahrscheinlich einen Namen enthält, müsste der Mitarbeiter nun diesen Kommentar zeitnah analysieren.
 		Anderenfalls kann der Mitarbeiter mit seiner Planung fortfahren und seine Arbeit erst unterbrechen, wenn er mit einer Arbeit fertig geworden ist.
 		Dadurch wird er deutlich seltener in seiner Arbeit unterbrochen und kann produktiver die Planung fortsetzen.
@@ -96,7 +96,7 @@ Um diesen Prozess zu erleichtern, stellen wir einen Ansatz vor, der die Kommenta
 		
 		Um es noch seltener zu machen, dass der Moderator überhaupt in solch einem Fall eingreifen muss, können die Nutzer gewarnt werden, dass unser System einen Namen erkannt hat.
 		Dadurch können die Nutzer diesen Namen noch entfernen, bevor der Kommentar abgeschickt wird.
-		Dies könnte in vielen Fällen bereits helfen, weil die meisten Nutzer die ihren Namen veröffentlichen, sich vermutlich einfach nicht bewusst gemacht haben, dass sie ihren Namen an dieser Stelle nicht veröffentlichen dürfen.
+		Dies könnte in vielen Fällen bereits helfen, weil die meisten Nutzer, die ihren Namen veröffentlichen, sich vermutlich einfach nicht bewusst gemacht haben, dass sie ihren Namen an dieser Stelle nicht veröffentlichen dürfen.
 		
 	\subsection{Erkennung von relevanten Schlagworten}
 		Der Moderator muss aktuell alle Kommentare lesen und dabei heraus analysieren, was die Punkte sind, die den Bürgern am wichtigsten sind.
@@ -108,10 +108,10 @@ Um diesen Prozess zu erleichtern, stellen wir einen Ansatz vor, der die Kommenta
 
 \section{Ansatz}
 	Für die beiden Probleme haben wir folgende zwei verschiedene Ansätze entwickelt.
-	Beide wurden in Python implementiert und nutzen vor allem die NLTK Bibliothek.
+	Beide wurden in Python implementiert und nutzen vor allem die NLTK Bibliothek\footnote{\url{https://www.nltk.org}}.
 	
 	\subsection{Datenschutz}
-		Um zu erkennen, dass ein Kommentar verfasst wurde, der Daten enthält die geschützt werden müssten, greifen wir auf Named Entity Recognition zurück.
+		Um zu erkennen, dass ein Kommentar verfasst wurde, der schützenswerte Daten enthält, greifen wir auf Named Entity Recognition zurück.
 		Dafür gibt es verschiedene mögliche Ansätze.
 		In unserer Implementation wird dabei ein Dictionary Look-Up verwendet~\cite{vajjala2020practical}.
 		Das bedeutet, dass wir ein Wörterbuch an möglichen Namen haben.
@@ -121,47 +121,47 @@ Um diesen Prozess zu erleichtern, stellen wir einen Ansatz vor, der die Kommenta
 		Wenn das System nun einen Namen findet, dann wird ein Wert erhöht, der die Wahrscheinlichkeit angibt, dass in dem Kommentar ein Name auftaucht.
 		
 		Wenn wir einen Namen erkannt haben, dann schauen wir ob direkt vor oder nach dem Namen noch ein Name erkannt wird.
-		Dies ist relevant, falls Nutzer ihren Vor und Nachnamen oder mehrere ihrer Vornamen angeben. Wenn z.B. ein Kommentar mit dem Namen unterschrieben wird, dann schreiben die Nutzer häufig ihren vollen Namen inklusive Vornamen und Nachnamen.
+		Dies ist relevant, falls Nutzer ihren Vor- und Nachnamen oder mehrere ihrer Vornamen angeben. Wenn z.B. ein Kommentar mit dem Namen unterschrieben wird, dann schreiben die Nutzer häufig ihren vollen Namen inklusive Vornamen und Nachnamen.
 		Deshalb wird dann der Wert für die Wahrscheinlichkeit weiter gesteigert, da durch zwei aufeinander folgende Namen die Wahrscheinlichkeit für eine falsch-positive Erkennung deutlich gesenkt wird.
 		
 		Um besser damit umgehen zu können, dass manche Namen möglicherweise nicht in jedem Kontext als Name zu deuten sind, haben wir noch einen Ansatz eingebaut, damit der Moderator die Gewichtung anpassen kann.
 		Wenn ein false-positive erkannt wird, kann der Moderator so die Gewichtung des Namens anpassen.
 		Dadurch kann z.B. langfristig der Fall verhindert werden, dass ein Nachname wie Bürger häufig als false-positive unsere Namenserkennung täuscht.
-		Derartige Human-in-the-Loop Ansätze sind im bereich der natürlichen Sprachverarbeitung weit verbreitet~\cite{bailey2018few}\cite{gronsund2020augmenting}.
+		Derartige Human-in-the-Loop Ansätze sind im Bereich der natürlichen Sprachverarbeitung weit verbreitet~\cite{bailey2018few}\cite{gronsund2020augmenting}.
 	
 	\subsection{Erkennung von relevanten Schlagworten}
 		Um relevante Schlagwörter zu finden, treffen wir die Annahme, dass mehrere Menschen denen ein ähnliches Thema wichtig ist auch die gleichen Begriffe nutzen.
-		Wenn z.B. viele Menschen wert darauf legen, dass ein Restaurant erhalten werden soll, dann würde man möglicherweise häufiger den Substring ``Restaurant <name> muss erhalten bleiben'' finden.
+		Wenn z.B. viele Menschen wert darauf legen, dass ein Restaurant erhalten werden soll, dann würde man möglicherweise häufiger den Substring \glqq Restaurant $<$name$>$ muss erhalten bleiben\grqq{} finden.
 		
 		Deshalb suchen wir nach N-Grams in den Texten.
 		Ein N-Gram ist eine Wortfolge von N Wörtern.
 		Mit unserem Ansatz zählen wir wie oft jedes N-Gram vorkommt in den Kommentaren.
-		Die häufigsten N-Gramme sind dann die wichtigsten Schlagwörter und können jetzt prominent sowohl dem Moderator als auch dem Nutzer präsentiert werden.
+		Die häufigsten N-Grams sind dann die wichtigsten Schlagwörter und können jetzt prominent sowohl dem Moderator als auch dem Nutzer präsentiert werden.
 
 \section{Evaluation}
 	\subsection{Datenschutz}
-		Die Erkennung von Vornamen klappt gut, weil Vornamen selten Begriffe sind die im sonstigen Sprachgebrauch verwendet werden.
+		Die Erkennung von Vornamen klappt gut, weil Vornamen selten Begriffe, sind die im sonstigen Sprachgebrauch verwendet werden.
 		Das sieht leider anders aus bei den Nachnamen.
-		Da z.B. Bürger ein Nachname ist, kommt es in der Analyse relativ häufig zu falsch positiven Erkennungen.
+		Da z.B. \glqq Bürger\grqq{} ein Nachname ist, kommt es in der Analyse relativ häufig zu falsch positiven Erkennungen.
 	\subsection{Erkennung von relevanten Schlagworten}
 		Die Erkennung der relevanten Schlagworte findet zwar Phrasen die häufig verwendet werden, aber sie haben häufig keinen direkten Bezug zu dem konkreten Thema.
-		Zum Beispiel kann man die Phrase ``Meine Meinung ist[...]'' häufiger finden.
-		Dieses Beispiel hat leider keine besondere Relevanz für die Diskussion.
+		Zum Beispiel kann man die Phrase \glqq Meine Meinung ist[...]\grqq{} häufiger finden,
+		die jedoch keine inhaltliche Relevanz für die Diskussion besitzt.
 
 \section{Erweiterungsmöglichkeiten}
 	\subsection{Datenschutz}
 		Man könnte den Dictionary based Ansatz ergänzen um einen Rule-Based Ansatz.
 		Rule-Based Ansätze finden in vielen Bereichen Verwendung~\cite{mahmud2015rule}.
-		Das könnte zum Beispiel so aussehen, dass man die Phrase ``mit freundlichen Grüßen'' erkennt, weil häufig nach einer solchen Phrase die Nutzer dann ihren Namen schreiben.
+		Das könnte zum Beispiel so aussehen, dass man die Phrase \glqq mit freundlichen Grüßen\grqq{} erkennt, weil häufig nach einer solchen Phrase die Nutzer dann ihren Namen schreiben.
 		Dies wäre natürlich keine sichere Erkennung, weil Nutzer auch nur mit dieser Grußformel ihren Kommentar beenden könnten, oder weil die Nutzer ein Pseudonym verwenden, dass wieder Datenschutzkonform wäre.
 		
 		Um das Problem zu lösen, dass man häufig falsch-positive Erkennungen bei Nachnamen hat, könnte man darauf achten Nachnamen nur zu zählen, wenn sie direkt nach einem erkannten Vornamen stehen.
 	\subsection{Erkennung von relevanten Schlagworten}
 		% Inverse document frequency, aber dinge die überall vorgeschlagen werden, fliegen dann auch raus
-		Um die Relevanz zu steigern von den erkannten Schlagwörtern, könnte man einen Ansatz wie die Inverse Document Frequency verwenden.
+		Um die Relevanz von den erkannten Schlagwörtern zu steigern könnte man einen Ansatz wie die Inverse Document Frequency verwenden.
 		% todo cite
 		Damit würden wir alle anderen Verfahren der Bürgerbeteiligung analysieren und häufige Phrasen in diesen finden.
-		Dann könnte man die Phrasen die im konkret betrachteten Verfahren gefunden unterschiedlich gewichten gewichten invers zu ihrer Häufigkeit in den allgemeinen Bürgerbeteiligungsprozessen. %häufige beschwerden
+		Dann könnte man die Phrasen die im konkret betrachteten Verfahren gefunden unterschiedlich gewichten, und zwar invers zu ihrer Häufigkeit in den allgemeinen Bürgerbeteiligungsprozessen. %häufige beschwerden
 
 	\bibliographystyle{abbrv}
 	\bibliography{bib}
