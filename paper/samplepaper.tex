@@ -42,7 +42,7 @@ Einerseits tauchen in von den Bürgern geschriebenen Kommentaren häufig datensc
 Deshalb präsentieren wir eine Methode die Namen in den Kommentaren finden kann und den Moderator informieren kann.
 
 Andererseits werden sehr viele Kommentare geschrieben und die Moderatoren müssen alle lesen um einen Überblick über die Bürgermeinung zu bekommen. 
-Um diesen Prozess zu erleichtern, stellen wir einen Ansatz vor der die Kommentare analysiert und häufige Schlagwortkombinationen findet.
+Um diesen Prozess zu erleichtern, stellen wir einen Ansatz vor, der die Kommentare analysiert und häufige Schlagwortkombinationen findet.
 
 \keywords{Kognitive Assistenzsysteme  \and Hybride Kollaborationsprozesse \and Städtebauplanung}
 \end{abstract}
@@ -50,109 +50,118 @@ Um diesen Prozess zu erleichtern, stellen wir einen Ansatz vor der die Kommentar
 %
 %
 \section{Motivation}
-\subsection{Bürgerbeteiligungsprozesse in der Städteplanung}
-Da die Projekte die durch die Städteplanung entworfen werden relevant sind für alle Bürger in der Stadt, sollten diese auch einbezogen werden.
-Einerseits kann dies zur Verbesserung der Planungen führen, da Bürger, die in der Region leben Vorschläge einbringen können die besonders wichtig sind für diese Region.
-Wenn zum Beispiel ein Spielplatz gebaut werden soll, aber schon ein Spielplatz in der Nähe vorhanden ist, der bei der Planung übersehen wurde, kann man durch die Bürgereinbeziehung dies in die Planung mit einbeziehen.
-Andererseits können so bereits früh mögliche Proteste der Bürger beachtet werden und man kann sich auf einen Kompromiss einigen mit dem sowohl die Bürger als auch die Planer zufrieden sind.
-Dies kann viel Geld sparen, weil durch frühe Kompromisse der Planungsprozess noch nicht weiter fortgeschritten ist und noch nicht mit bauen begonnen wurde.
-
-\subsection{Datenschutz}
-Aus Datenschutzrechtlichen Gründen ist es nicht erlaubt, dass die Bürger persönlich identifizierende Informationen in diesen Prozess einfließen lassen.
-Aus Unwissen der Bürger darüber passiert es aber regelmäßig, dass Kommentare mit vollem Namen unterschrieben werden.
-Das führt dazu, dass die Moderatoren zeitintensiv und zeitnah alle Kommentare lesen müssen und ggf. identifizierende Informationen redaktionell entfernen müssen.
-Dieser Prozess ist ineffizient, weil er aus sehr viel manuellem Aufwand besteht.
-Dies führt zu weniger Arbeitskraft die in die tatsächliche Planung des Projektes investiert werden kann.
-
-Wenn die Moderatoren hier durch ein kognitives Assistenzsystem unterstützt werden, dann kann dieses im Hintergrund neue Kommentare analysieren und die Moderatoren werden nur in ihrer Arbeit gestört, wenn es wahrscheinlich ist, dass ein Kommentar solche Informationen enthält.
-
-\subsection{Erkennung von relevanten Schlagworten}
-Durch die riesige Masse an Kommentaren die zu jedem Thema geschrieben werden, wird es schnell unübersichtlich für die Moderatoren.
-Jeden Artikel gründlich zu lesen und zu analysieren kostet sehr viel Zeit.
-
-Deshalb wäre es hilfreich, wenn ein System automatisiert relevante Schlagwörter in den Kommentaren erfassen könnte und man so bereits auf den ersten Blick eine Zusammenfassung über die diskuttierten Themen sehen kann.
-Das ermöglicht auch den Bürgern zu sehen, was andere Bürger zu diesem Thema bewegt hat und hilft ihnen möglicherweise besseres Feedback zu formulieren, dass Punkte berücksichtigt die sonst nicht eingeflossen wären, weil sie nicht alle Kommentare gelesen hätten.
+	\subsection{Bürgerbeteiligungsprozesse in der Städteplanung}
+		Da die Projekte die durch die Städteplanung entworfen werden relevant sind für alle Bürger in der Stadt, sollten diese auch einbezogen werden.
+		Einerseits kann dies zur Verbesserung der Planungen führen, da Bürger, die in der Region leben Vorschläge einbringen können die besonders wichtig sind für diese Region.
+		Wenn zum Beispiel ein Spielplatz gebaut werden soll, aber schon ein Spielplatz in der Nähe vorhanden ist, der bei der Planung übersehen wurde, kann man durch die Bürgereinbeziehung dies in die Planung mit einbeziehen.
+		Andererseits können so bereits früh mögliche Proteste der Bürger beachtet werden und man kann sich auf einen Kompromiss einigen mit dem sowohl die Bürger als auch die Planer zufrieden sind.
+		Dies kann viel Geld sparen, weil durch frühe Kompromisse der Planungsprozess noch nicht weiter fortgeschritten ist und noch nicht mit bauen begonnen wurde.
+	
+	\subsection{Datenschutz}
+		Aus datenschutzrechtlichen Gründen ist es nicht erlaubt, dass die Bürger persönlich identifizierende Informationen in diesen Prozess einfließen lassen.
+		Aus Unwissen der Bürger darüber passiert es aber regelmäßig, dass Kommentare mit vollem Namen unterschrieben werden.
+		Das führt dazu, dass die Moderatoren zeitintensiv und zeitnah alle Kommentare lesen müssen und ggf. identifizierende Informationen redaktionell entfernen müssen.
+		Dieser Prozess ist ineffizient, weil er aus sehr viel manuellem Aufwand besteht.
+		Dies führt zu weniger Arbeitskraft die in die tatsächliche Planung des Projektes investiert werden kann.
+		
+		Wenn die Moderatoren hier durch ein kognitives Assistenzsystem unterstützt werden, dann kann dieses im Hintergrund neue Kommentare analysieren und die Moderatoren werden nur in ihrer Arbeit gestört, wenn es wahrscheinlich ist, dass ein Kommentar solche Informationen enthält.
+	
+	\subsection{Erkennung von relevanten Schlagworten}
+		Durch die riesige Masse an Kommentaren die zu jedem Thema geschrieben werden, wird es schnell unübersichtlich für die Moderatoren.
+		Jeden Artikel gründlich zu lesen und zu analysieren kostet sehr viel Zeit.
+		
+		Deshalb wäre es hilfreich, wenn ein System automatisiert relevante Schlagwörter in den Kommentaren erfassen könnte und man so bereits auf den ersten Blick eine Zusammenfassung über die diskuttierten Themen sehen kann.
+		Das ermöglicht auch den Bürgern zu sehen, was andere Bürger zu diesem Thema bewegt hat und hilft ihnen möglicherweise besseres Feedback zu formulieren, dass Punkte berücksichtigt die sonst nicht eingeflossen wären, weil sie nicht alle Kommentare gelesen hätten.
 
 \section{User Stories}
-In diesem Kapitel wollen wir mögliche Szenarien beschreiben wie die von uns entwickelten Systeme die Moderatorenarbeit erleichtern können und damit erlauben, dass mehr Arbeitszeit in die Planung investiert werden kann.
-\subsection{Datenschutz}
-Der Mitarbeiter der sich mit der Moderation beschäftigt ist normalerweise damit beschäftigt das Städtebauprojekt zu planen.
-Dabei ist es auch wichtig, dass die Meinungen der Bürger mit einbezogen werden, deshalb ist es auch wichtig für diesen Mitarbeiter auch die Kommentare zu lesen.
-
-Während der Planung des Städtebauprojekts kommt nun ein neuer Kommentar an und der Mitarbeiter muss sich überlegen ob er diesen Kommentar sofort begutachten kann, damit der Nutzer sieht, dass der Kommentar angenommen wurde.
-Ansonsten könnte der Nutzer denken seine Meinung wurde zensiert und sich nicht ernst genommen fühlen.
-Gleichzeitig bedeutet das aber auch, dass der Mitarbeiter seine Planung unterbrechen muss, sich mit dem Kontext des Kommentars befassen muss und dann sich wieder einarbeiten muss in die Planung mit der er eben beschäftigt war.
-
-Zum aktuellen Stand kann der Kommentar nämlich nicht einfach veröffentlicht werden, weil er gegen die Datenschutzgrundverordnung verstoßen könnte, weil identifizierende Informationen über Personen gesammelt werden könnten, ohne das dies Notwendig ist. 
-Dies kann bereits passieren, indem ein Bürger einfach seinen Kommentar beendet mit einer Grußformel und seinem oder ihrem Namen.
-
-Durch den Einsatz unseres Systemes könnten neue Kommentare nun statt dessen im Hintergrund analysiert werden.
-Nur im Falle, dass ein Kommentar wahrscheinlich einen Namen enthält, müsste der Mitarbeiter nun diesen Kommentar zeitnah analysieren.
-Anderenfalls kann der Mitarbeiter mit seiner Planung fortfahren und seine Arbeit erst unterbrechen, wenn er mit einer Arbeit fertig geworden ist.
-Dadurch wird er deutlich seltener in seiner Arbeit unterbrochen und kann produktiver die Planung fortsetzen.
-
-Um es noch seltener zu machen, dass der Moderator überhaupt in solch einem Fall eingreifen muss, können die Nutzer gewarnt werden, dass unser System einen Namen erkannt hat.
-Dadurch können die Nutzer diesen Namen noch entfernen, bevor der Kommentar abgeschickt wird.
-Dies könnte in vielen Fällen bereits helfen, weil die meisten Nutzer die ihren Namen veröffentlichen, sich vermutlich einfach nicht bewusst gemacht haben, dass sie ihren Namen an dieser Stelle nicht veröffentlichen dürfen.
-\subsection{Erkennung von relevanten Schlagworten}
-Der Moderator muss aktuell alle Kommentare lesen und dabei heraus analysieren, was die Punkte sind, die den Bürgern am wichtigsten sind.
-Dabei muss der Moderator entweder sich merken was die häufigst genannten Punkte sind, oder sich eine Liste machen.
-Dadurch ist diese Liste aber sehr subjektiv basierend auf den Punkten die der Moderator am sinnvollsten fand.
-
-Unser System würde stattdessen neutral die Kommentare analysieren und dabei betrachten welche Punkte am häufigsten genannt sind.
-Dadurch können sowohl die Moderatoren neutral ausgesuchte Schlagworte finden die besonders häufig genannt wurden zu dem Thema, aber auch die Nutzer können schnell sehen, ob ein Thema bereits als besonders wichtig erachtet wird in der Diskussion oder ob ihr Vorschlag bisher eher weniger betrachtet wurde.
+	In diesem Kapitel wollen wir mögliche Szenarien beschreiben wie die von uns entwickelten Systeme die Moderatorenarbeit erleichtern können und damit erlauben, dass mehr Arbeitszeit in die Planung investiert werden kann.
+	
+	\subsection{Datenschutz}
+		Der Mitarbeiter der sich mit der Moderation beschäftigt ist normalerweise damit beschäftigt das Städtebauprojekt zu planen.
+		Dabei ist es auch wichtig, dass die Meinungen der Bürger mit einbezogen werden, deshalb ist es auch wichtig für diesen Mitarbeiter auch die Kommentare zu lesen.
+		
+		Während der Planung des Städtebauprojekts kommt nun ein neuer Kommentar an und der Mitarbeiter muss sich überlegen ob er diesen Kommentar sofort begutachten kann, damit der Nutzer sieht, dass der Kommentar angenommen wurde.
+		Ansonsten könnte der Nutzer denken seine Meinung wurde zensiert und sich nicht ernst genommen fühlen.
+		Gleichzeitig bedeutet das aber auch, dass der Mitarbeiter seine Planung unterbrechen muss, sich mit dem Kontext des Kommentars befassen muss und dann sich wieder einarbeiten muss in die Planung mit der er eben beschäftigt war.
+		
+		Zum aktuellen Stand kann der Kommentar nämlich nicht einfach veröffentlicht werden, weil er gegen die Datenschutzgrundverordnung verstoßen könnte, weil identifizierende Informationen über Personen gesammelt werden könnten, ohne das dies Notwendig ist. 
+		Dies kann bereits passieren, indem ein Bürger einfach seinen Kommentar beendet mit einer Grußformel und seinem oder ihrem Namen.
+		
+		Durch den Einsatz unseres Systemes könnten neue Kommentare nun statt dessen im Hintergrund analysiert werden.
+		Nur im Falle, dass ein Kommentar wahrscheinlich einen Namen enthält, müsste der Mitarbeiter nun diesen Kommentar zeitnah analysieren.
+		Anderenfalls kann der Mitarbeiter mit seiner Planung fortfahren und seine Arbeit erst unterbrechen, wenn er mit einer Arbeit fertig geworden ist.
+		Dadurch wird er deutlich seltener in seiner Arbeit unterbrochen und kann produktiver die Planung fortsetzen.
+		Der Einsatz natürlicher Sprachverarbeitung zur Erhaltung von Datenschutzzielen ist bereits in mehreren Bereichen (vor allem der Medizin und Jura) im Einsatz~\cite{sadat2019privacy}.
+		
+		Um es noch seltener zu machen, dass der Moderator überhaupt in solch einem Fall eingreifen muss, können die Nutzer gewarnt werden, dass unser System einen Namen erkannt hat.
+		Dadurch können die Nutzer diesen Namen noch entfernen, bevor der Kommentar abgeschickt wird.
+		Dies könnte in vielen Fällen bereits helfen, weil die meisten Nutzer die ihren Namen veröffentlichen, sich vermutlich einfach nicht bewusst gemacht haben, dass sie ihren Namen an dieser Stelle nicht veröffentlichen dürfen.
+		
+	\subsection{Erkennung von relevanten Schlagworten}
+		Der Moderator muss aktuell alle Kommentare lesen und dabei heraus analysieren, was die Punkte sind, die den Bürgern am wichtigsten sind.
+		Dabei muss der Moderator entweder sich merken was die häufigst genannten Punkte sind, oder sich eine Liste machen.
+		Dadurch ist diese Liste aber sehr subjektiv basierend auf den Punkten die der Moderator am sinnvollsten fand.
+		
+		Unser System würde stattdessen neutral die Kommentare analysieren und dabei betrachten welche Punkte am häufigsten genannt sind.
+		Dadurch können sowohl die Moderatoren neutral ausgesuchte Schlagworte finden die besonders häufig genannt wurden zu dem Thema, aber auch die Nutzer können schnell sehen, ob ein Thema bereits als besonders wichtig erachtet wird in der Diskussion oder ob ihr Vorschlag bisher eher weniger betrachtet wurde.
 
 \section{Ansatz}
-Für die beiden Probleme haben wir folgende zwei verschiedene Ansätze entwickelt.
-\section{Datenschutz}
-Um zu erkennen, dass ein Kommentar verfasst wurde, der Daten enthält die geschützt werden müssten, greifen wir auf Named Entity Recognition zurück.
-Dafür gibt es verschiedene mögliche Ansätze.
-In unserer Implementation wird dabei ein Dictionary Look-Up verwendet.
-% todo cite dictionary look up
-Das bedeutet, dass wir ein Wörterbuch an möglichen Namen haben.
-Dann analysieren wir die Kommentare und vergleichen die einzelnen Worte mit den Einträgen aus dem Wörterbuch.
-Wir verwenden dafür zwei Wörterbücher.
-Eines für mögliche Vornamen und eines Für Nachnamen.
-%todo cite die github repos wo wir sie her haben?
-Wenn das System nun einen Namen findet, dann wird ein Wert erhöht, der die Wahrscheinlichkeit angibt, dass in dem Kommentar ein Name auftaucht.
+	Für die beiden Probleme haben wir folgende zwei verschiedene Ansätze entwickelt.
+	Beide wurden in Python implementiert und nutzen vor allem die NLTK Bibliothek.
+	
+	\subsection{Datenschutz}
+		Um zu erkennen, dass ein Kommentar verfasst wurde, der Daten enthält die geschützt werden müssten, greifen wir auf Named Entity Recognition zurück.
+		Dafür gibt es verschiedene mögliche Ansätze.
+		In unserer Implementation wird dabei ein Dictionary Look-Up verwendet~\cite{vajjala2020practical}.
+		Das bedeutet, dass wir ein Wörterbuch an möglichen Namen haben.
+		Dann analysieren wir die Kommentare und vergleichen die einzelnen Worte mit den Einträgen aus dem Wörterbuch.
+		Wir verwenden dafür zwei Wörterbücher.
+		Eines für mögliche Vornamen\footnote{\url{https://github.com/ndsvw/JSON-Namen}} und eines für Nachnamen\footnote{\url{https://github.com/HBehrens/phonet4n}}.
+		Wenn das System nun einen Namen findet, dann wird ein Wert erhöht, der die Wahrscheinlichkeit angibt, dass in dem Kommentar ein Name auftaucht.
+		
+		Wenn wir einen Namen erkannt haben, dann schauen wir ob direkt vor oder nach dem Namen noch ein Name erkannt wird.
+		Dies ist relevant, falls Nutzer ihren Vor und Nachnamen oder mehrere ihrer Vornamen angeben. Wenn z.B. ein Kommentar mit dem Namen unterschrieben wird, dann schreiben die Nutzer häufig ihren vollen Namen inklusive Vornamen und Nachnamen.
+		Deshalb wird dann der Wert für die Wahrscheinlichkeit weiter gesteigert, da durch zwei aufeinander folgende Namen die Wahrscheinlichkeit für eine falsch-positive Erkennung deutlich gesenkt wird.
+		
+		Um besser damit umgehen zu können, dass manche Namen möglicherweise nicht in jedem Kontext als Name zu deuten sind, haben wir noch einen Ansatz eingebaut, damit der Moderator die Gewichtung anpassen kann.
+		Wenn ein false-positive erkannt wird, kann der Moderator so die Gewichtung des Namens anpassen.
+		Dadurch kann z.B. langfristig der Fall verhindert werden, dass ein Nachname wie Bürger häufig als false-positive unsere Namenserkennung täuscht.
+		Derartige Human-in-the-Loop Ansätze sind im bereich der natürlichen Sprachverarbeitung weit verbreitet~\cite{bailey2018few}\cite{gronsund2020augmenting}.
+	
+	\subsection{Erkennung von relevanten Schlagworten}
+		Um relevante Schlagwörter zu finden, treffen wir die Annahme, dass mehrere Menschen denen ein ähnliches Thema wichtig ist auch die gleichen Begriffe nutzen.
+		Wenn z.B. viele Menschen wert darauf legen, dass ein Restaurant erhalten werden soll, dann würde man möglicherweise häufiger den Substring ``Restaurant <name> muss erhalten bleiben'' finden.
+		
+		Deshalb suchen wir nach N-Grams in den Texten.
+		Ein N-Gram ist eine Wortfolge von N Wörtern.
+		Mit unserem Ansatz zählen wir wie oft jedes N-Gram vorkommt in den Kommentaren.
+		Die häufigsten N-Gramme sind dann die wichtigsten Schlagwörter und können jetzt prominent sowohl dem Moderator als auch dem Nutzer präsentiert werden.
 
-Wenn wir einen Namen erkannt haben, dann schauen wir ob direkt vor oder nach dem Namen noch ein Name erkannt wird.
-Dies ist relevant, falls Nutzer ihren Vor und Nachnamen oder mehrere ihrer Vornamen angeben. Wenn z.B. ein Kommentar mit dem Namen unterschrieben wird, dann schreiben die Nutzer häufig ihren vollen Namen inklusive Vornamen und Nachnamen.
-Deshalb wird dann der Wert für die Wahrscheinlichkeit weiter gesteigert, da durch zwei aufeinander folgende Namen die Wahrscheinlichkeit für eine falsch-positive Erkennung deutlich gesenkt wird.
-
-Um besser damit umgehen zu können, dass manche Namen möglicherweise nicht in jedem Kontext als Name zu deuten sind, haben wir noch einen Ansatz eingebaut, damit der Moderator die Gewichtung anpassen kann.
-Wenn ein false-positive erkannt wird, kann der Moderator so die Gewichtung des Namens anpassen.
-Dadurch kann z.B. langfristig der Fall verhindert werden, dass ein Nachname wie Bürger häufig als false-positive unsere Namenserkennung täuscht.
-\subsection{Erkennung von relevanten Schlagworten}
-Um relevante Schlagwörter zu finden, treffen wir die Annahme, dass mehrere Menschen denen ein ähnliches Thema wichtig ist auch die gleichen Begriffe nutzen.
-Wenn z.B. viele Menschen wert darauf legen, dass ein Restaurant erhalten werden soll, dann würde man möglicherweise häufiger den Substring "Restaurant <name> muss erhalten bleiben" finden.
-
-Deshalb suchen wir nach N-Grams in den Texten.
-Ein N-Gram ist eine Wortfolge von N Wörtern.
-Mit unserem Ansatz zählen wir wie oft jedes N-Gram vorkommt in den Kommentaren.
-Die häufigsten N-Gramme sind dann die wichtigsten Schlagwörter und können jetzt prominent sowohl dem Moderator als auch dem Nutzer präsentiert werden.
 \section{Evaluation}
-\subsection{Datenschutz}
-Die Erkennung von Vornamen klappt gut, weil Vornamen selten Begriffe sind die im sonstigen Sprachgebrauch verwendet werden.
-Das sieht leider anders aus bei den Nachnamen.
-Da z.B. Bürger ein Nachname ist, kommt es in der Analyse relativ häufig zu falsch positiven Erkennungen.
-\subsection{Erkennung von relevanten Schlagworten}
-Die Erkennung der relevanten Schlagworte findet zwar Phrasen die häufig verwendet werden, aber sie haben häufig keinen direkten Bezug zu dem konkreten Thema.
-Zum Beispiel kann man die Phrase "Meine meinung ist[...]" häufiger finden.
-Dieses Beispiel hat leider keine besondere Relevanz für die Diskussion.
+	\subsection{Datenschutz}
+		Die Erkennung von Vornamen klappt gut, weil Vornamen selten Begriffe sind die im sonstigen Sprachgebrauch verwendet werden.
+		Das sieht leider anders aus bei den Nachnamen.
+		Da z.B. Bürger ein Nachname ist, kommt es in der Analyse relativ häufig zu falsch positiven Erkennungen.
+	\subsection{Erkennung von relevanten Schlagworten}
+		Die Erkennung der relevanten Schlagworte findet zwar Phrasen die häufig verwendet werden, aber sie haben häufig keinen direkten Bezug zu dem konkreten Thema.
+		Zum Beispiel kann man die Phrase ``Meine Meinung ist[...]'' häufiger finden.
+		Dieses Beispiel hat leider keine besondere Relevanz für die Diskussion.
+
 \section{Erweiterungsmöglichkeiten}
-\subsection{Datenschutz}
-Man könnte den Dictionary based Ansatz ergänzen um einen Rule-Based Ansatz.
-Das könnte zum Beispiel so aussehen, dass man die Phrase "mit freundlichen Grüßen" erkennt, weil häufig nach einer solchen Phrase die Nutzer dann ihren Namen schreiben.
-Dies wäre natürlich keine sichere Erkennung, weil Nutzer auch nur mit dieser Grußformel ihren Kommentar beenden könnten, oder weil die Nutzer ein Pseudonym verwenden, dass wieder Datenschutzkonform wäre.
-% TODO cite rule base
+	\subsection{Datenschutz}
+		Man könnte den Dictionary based Ansatz ergänzen um einen Rule-Based Ansatz.
+		Rule-Based Ansätze finden in vielen Bereichen Verwendung~\cite{mahmud2015rule}.
+		Das könnte zum Beispiel so aussehen, dass man die Phrase ``mit freundlichen Grüßen'' erkennt, weil häufig nach einer solchen Phrase die Nutzer dann ihren Namen schreiben.
+		Dies wäre natürlich keine sichere Erkennung, weil Nutzer auch nur mit dieser Grußformel ihren Kommentar beenden könnten, oder weil die Nutzer ein Pseudonym verwenden, dass wieder Datenschutzkonform wäre.
+		
+		Um das Problem zu lösen, dass man häufig falsch-positive Erkennungen bei Nachnamen hat, könnte man darauf achten Nachnamen nur zu zählen, wenn sie direkt nach einem erkannten Vornamen stehen.
+	\subsection{Erkennung von relevanten Schlagworten}
+		% Inverse document frequency, aber dinge die überall vorgeschlagen werden, fliegen dann auch raus
+		Um die Relevanz zu steigern von den erkannten Schlagwörtern, könnte man einen Ansatz wie die Inverse Document Frequency verwenden.
+		% todo cite
+		Damit würden wir alle anderen Verfahren der Bürgerbeteiligung analysieren und häufige Phrasen in diesen finden.
+		Dann könnte man die Phrasen die im konkret betrachteten Verfahren gefunden unterschiedlich gewichten gewichten invers zu ihrer Häufigkeit in den allgemeinen Bürgerbeteiligungsprozessen. %häufige beschwerden
 
-Um das Problem zu lösen, dass man häufig falsch-positive Erkennungen bei Nachnamen hat, könnte man darauf achten Nachnamen nur zu zählen, wenn sie direkt nach einem erkannten Vornamen stehen.
-\subsection{Erkennung von relevanten Schlagworten}
-% Inverse document frequency, aber dinge die überall vorgeschlagen werden, fliegen dann auch raus
-Um die Relevanz zu steigern von den erkannten Schlagwörtern, könnte man einen Ansatz wie die Inverse Document Frequency verwenden.
-% todo cite
-Damit würden wir alle anderen Verfahren der Bürgerbeteiligung analysieren und häufige Phrasen in diesen finden.
-Dann könnte man die Phrasen die im konkret betrachteten Verfahren gefunden unterschiedlich gewichten gewichten invers zu ihrer Häufigkeit in den allgemeinen Bürgerbeteiligungsprozessen. %häufige beschwerden
-
+	\bibliographystyle{abbrv}
+	\bibliography{bib}
 \end{document}
