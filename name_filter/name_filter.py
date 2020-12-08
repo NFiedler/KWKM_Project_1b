@@ -3,12 +3,29 @@ import csv
 import re
 
 class NameFilter:
-    def __init__(self):
-        self.prints = True
+    def __init__(self, interactive=True, prints=True):
+        self.interactive = interactive
+        self.prints = prints
         with open('names/vornamen.txt', 'r') as f:
             self.first_names = [line[0] for line in csv.reader(f)]
         with open('names/nachnamen.txt', 'r') as f:
             self.surnames = [line[0] for line in csv.reader(f)]
+        with open('include.txt', 'r') as f:
+            self.include = [line[0] for line in csv.reader(f)]
+        with open('exclude.txt', 'r') as f:
+            self.exclude = [line[0] for line in csv.reader(f)]
+
+    def add_to_include(self, word):
+        if word not in self.include:
+            self.include.append(word)
+            with open('include.txt', 'a') as f:
+                f.write(word + '\n')
+
+    def add_to_exclude(self, word):
+        if word not in self.exclude:
+            self.exclude.append(word)
+            with open('exclude.txt', 'a') as f:
+                f.write(word + '\n')
 
     def classify(self, text: str) -> float:
         rating = 0
@@ -51,7 +68,32 @@ class NameFilter:
             if surname_find[0] > 0:
                 if re.match('[A-Z]\.', words[surname_find[0]-1]): # searching for Capital letter and dot (J. Hagge)
                     rating += 0.2
+        if self.interactive:
+            name_finds = surname_finds + first_name_finds
+            candidates = [words[name_find[0]-1] for name_find in name_finds if name_find[0] > 0] candidates += [words[name_find[0]+1] for name_find in name_finds if len(words) > name_find[0] +1]
+            candidates = [candidate for candidate in candidates if canidate not in self.include and candidate not in self.exclude and candidate not in self.surnames and candidate not in self.first_names]
+            candidates = [candidate for candidate in candidates if not re.match('[A-Z]\.', candidate)]
+            for candidate in candidates: 
+                result = yes_no(f'Is \"{candidate}\" a name?') 
+                if result:
+                    self.add_to_include(candidate)
+                else:
+                    self.add_to_exclude(candidate)
+
         return rating
 
-
+# Function for a Yes/No result based on the answer provided as an arguement
+# Taken from https://overlaid.net/2016/02/09/simple-yes-no-function-in-python/
+def yes_no(answer):
+    yes = set(['yes','y', 'ye', ''])
+    no = set(['no','n'])
+     
+    while True:
+        choice = raw_input(answer).lower()
+        if choice in yes:
+           return True
+        elif choice in no:
+           return False
+        else:
+           print &quot;Please respond with 'yes' or 'no'\n&quot;
 
