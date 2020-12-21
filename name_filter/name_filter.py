@@ -33,6 +33,11 @@ class NameFilter:
         surname_finds = []
         text = text.replace('\n', ' ')
         text = text.replace('-', ' ')
+        # replace umlaute
+        text = text.replace("Ä", "Ae").replace("ä", "ae")
+        text = text.replace("Ü", "Ue").replace("ü", "ue")
+        text = text.replace("Ö", "Oe").replace("ö", "oe")
+        text = text.replace("ẞ", "Ss").replace("ß", "ss")
 
         words = text.split(' ')
         for i, word in enumerate(words):
