@@ -1,6 +1,7 @@
 import yaml
 import csv
 import re
+from nltk.tokenize import RegexpTokenizer
 
 class NameFilter:
     def __init__(self, interactive=True, prints=True):
@@ -14,15 +15,16 @@ class NameFilter:
             self.include = [line[0] for line in csv.reader(f)]
         with open('exclude.txt', 'r') as f:
             self.exclude = [line[0] for line in csv.reader(f)]
+        self.tokenizer = RegexpTokenizer(r'\w+')
 
     def add_to_include(self, word):
-        if word not in self.include:
+        if word not in self.include and word != "":
             self.include.append(word)
             with open('include.txt', 'a') as f:
                 f.write(word + '\n')
 
     def add_to_exclude(self, word):
-        if word not in self.exclude:
+        if word not in self.exclude and word != "":
             self.exclude.append(word)
             with open('exclude.txt', 'a') as f:
                 f.write(word + '\n')
@@ -39,7 +41,7 @@ class NameFilter:
         text = text.replace("Ö", "Oe").replace("ö", "oe")
         text = text.replace("ẞ", "Ss").replace("ß", "ss")
 
-        words = text.split(' ')
+        words = self.tokenizer.tokenize(text)
         for i, word in enumerate(words):
             found = False
             if word in self.first_names:
@@ -77,14 +79,15 @@ class NameFilter:
             name_finds = surname_finds + first_name_finds
             candidates = [words[name_find[0]-1] for name_find in name_finds if name_find[0] > 0]
             candidates += [words[name_find[0]+1] for name_find in name_finds if len(words) > name_find[0] +1]
-            candidates = [candidate for candidate in candidates if candidate not in self.include and candidate not in self.exclude and candidate not in self.surnames and candidate not in self.first_names]
-            candidates = [candidate for candidate in candidates if not re.match('[A-Z]\.', candidate)]
-            for candidate in candidates: 
-                result = yes_no(f'Is \"{candidate}\" a name?') 
-                if result:
-                    self.add_to_include(candidate)
-                else:
-                    self.add_to_exclude(candidate)
+            candidates = [candidate for candidate in candidates if candidate not in self.surnames and candidate not in self.first_names]
+            candidates = [candidate for candidate in candidates if not re.match('[A-Z]\.', candidate) and candidate != ""]
+            for candidate in candidates:
+                if candidate not in self.include and candidate not in self.exclude:
+                    result = yes_no(f'Is \"{candidate}\" a name?')
+                    if result:
+                        self.add_to_include(candidate)
+                    else:
+                        self.add_to_exclude(candidate)
 
         return rating
 
