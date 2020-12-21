@@ -905,7 +905,6 @@ Bruck
 Brucker
 Bruckmann
 Bruckner
-Bruder
 Bruecher
 Brueck
 Bruecker
@@ -1677,7 +1676,6 @@ Emmerling
 Emmert
 Emmrich
 Emrich
-Ende
 Endemann
 Ender
 Enderle
@@ -2046,8 +2044,6 @@ Friesen
 Friess
 Frietsch
 Frings
-Frisch
-Frische
 Frischmuth
 Fritsch
 Fritsche
@@ -2463,7 +2459,6 @@ Grasshoff
 Grassl
 Grassmann
 Gratz
-Grau
 Grauer
 Graul
 Graumann
@@ -2539,8 +2534,6 @@ Gropp
 Gros
 Grosch
 Grosche
-Grosse
-Grosser
 Grosshans
 Grosskopf
 Grossmann
@@ -2560,7 +2553,6 @@ Grueber
 Grueger
 Gruenberg
 Gruendel
-Gruender
 Gruendler
 Grueneberg
 Gruenert
@@ -2872,7 +2864,6 @@ Hauck
 Haucke
 Hauenstein
 Hauer
-Hauf
 Haufe
 Hauff
 Hauffe
@@ -4078,10 +4069,7 @@ Kleen
 Klees
 Kleiber
 Kleimann
-Klein
 Kleindienst
-Kleine
-Kleiner
 Kleinert
 Kleinfeld
 Kleinhans
@@ -4352,7 +4340,6 @@ Koob
 Koop
 Koopmann
 Koops
-Kopf
 Kopietz
 Kopka
 Koplin
@@ -5393,7 +5380,6 @@ Mende
 Mendel
 Mendler
 Meng
-Menge
 Mengel
 Menger
 Menges
@@ -5638,7 +5624,6 @@ Mustafa
 Muth
 Mutlu
 Mutschler
-Mutter
 Mutz
 Naber
 Nachtigall
@@ -5649,7 +5634,6 @@ Nadler
 Nadolny
 Naegele
 Naether
-Nagel
 Nagl
 Nagler
 Nagy
@@ -5934,7 +5918,6 @@ Oschmann
 Osman
 Ossowski
 Osswald
-Osten
 Ostendorf
 Oster
 Osterkamp
@@ -6614,7 +6597,6 @@ Riedmann
 Riedmueller
 Rief
 Rieg
-Riegel
 Rieger
 Riegger
 Riegler
@@ -7983,7 +7965,6 @@ Stettner
 Steube
 Steuber
 Steudel
-Steuer
 Steuernagel
 Steurer
 Stevens
@@ -8494,7 +8475,6 @@ Viehmann
 Viehweger
 Vieregge
 Vierling
-Viertel
 Vieten
 Vieth
 Vieweg
@@ -8565,7 +8545,6 @@ Wagemann
 Wagener
 Wagenknecht
 Wagner
-Wahl
 Wahle
 Wahler
 Wahlers
@@ -8832,7 +8811,6 @@ Westhoff
 Westphal
 Westphalen
 Weth
-Wetter
 Wetzel
 Wetzig
 Wetzler
@@ -8934,7 +8912,6 @@ Wilken
 Wilkening
 Wilkens
 Wilkes
-Wille
 Willecke
 Willeke
 Willems
