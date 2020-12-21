@@ -70,8 +70,9 @@ class NameFilter:
                     rating += 0.2
         if self.interactive:
             name_finds = surname_finds + first_name_finds
-            candidates = [words[name_find[0]-1] for name_find in name_finds if name_find[0] > 0] candidates += [words[name_find[0]+1] for name_find in name_finds if len(words) > name_find[0] +1]
-            candidates = [candidate for candidate in candidates if canidate not in self.include and candidate not in self.exclude and candidate not in self.surnames and candidate not in self.first_names]
+            candidates = [words[name_find[0]-1] for name_find in name_finds if name_find[0] > 0]
+            candidates += [words[name_find[0]+1] for name_find in name_finds if len(words) > name_find[0] +1]
+            candidates = [candidate for candidate in candidates if candidate not in self.include and candidate not in self.exclude and candidate not in self.surnames and candidate not in self.first_names]
             candidates = [candidate for candidate in candidates if not re.match('[A-Z]\.', candidate)]
             for candidate in candidates: 
                 result = yes_no(f'Is \"{candidate}\" a name?') 
@@ -89,11 +90,11 @@ def yes_no(answer):
     no = set(['no','n'])
      
     while True:
-        choice = raw_input(answer).lower()
+        choice = input(answer).lower()
         if choice in yes:
            return True
         elif choice in no:
            return False
         else:
-           print &quot;Please respond with 'yes' or 'no'\n&quot;
+           print("Please respond with 'yes' or 'no'")
 
