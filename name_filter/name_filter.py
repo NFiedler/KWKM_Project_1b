@@ -34,12 +34,16 @@ class NameFilter:
         first_name_finds = []
         surname_finds = []
         text = text.replace('\n', ' ')
-        text = text.replace('-', ' ')
         # replace umlaute
         text = text.replace("Ä", "Ae").replace("ä", "ae")
         text = text.replace("Ü", "Ue").replace("ü", "ue")
         text = text.replace("Ö", "Oe").replace("ö", "oe")
         text = text.replace("ẞ", "Ss").replace("ß", "ss")
+
+        # Rule-based removal of street names
+        text = re.sub(r"(([A-Z][a-z]+-)+|([A-Z][a-z]+ )){1,2}(Weg|Platz|Allee|Strasse|Park)", "", text)
+
+        text = text.replace('-', ' ')
 
         words = self.tokenizer.tokenize(text)
         for i, word in enumerate(words):
