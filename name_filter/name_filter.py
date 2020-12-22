@@ -4,11 +4,29 @@ import re
 from nltk.tokenize import RegexpTokenizer
 
 class NameFilter:
-    def __init__(self, interactive_add=True, prints=True):
+    def __init__(self,
+                 interactive_add=True,
+                 interactive_adapt=True,
+                 prints=True,
+                 name_follow_name_rating=0.2,
+                 name_follow_short_rating=0.2,
+                 short_follow_name_rating=0.2,
+                 learning_rate=0.2,
+                 name_min_rating=0,
+                 name_max_rating=2
+                 ):
         self.interactive_add = interactive_add
+        self.interactive_adapt = interactive_adapt
         self.prints = prints
-        with open('names/namen.csv', 'r') as f:
-            self.names = [line[0] for line in csv.reader(f)]
+        self.name_follow_name_rating = name_follow_name_rating
+        self.name_follow_short_rating = name_follow_short_rating
+        self.short_follow_name_rating = short_follow_name_rating
+        self.name_min_rating = name_min_rating
+        self.name_max_rating = name_max_rating
+        self.learning_rate=learning_rate
+        self.name_file = 'names/namen.csv'
+        with open(self.name_file, 'r') as f:
+            self.names = {line[0]: float(line[1]) for line in csv.reader(f)}
         with open('include.txt', 'r') as f:
             self.include = [line[0] for line in csv.reader(f)]
         with open('exclude.txt', 'r') as f:
@@ -45,25 +63,30 @@ class NameFilter:
         words = self.tokenizer.tokenize(text)
         for i, word in enumerate(words):
             found = False
-            if word in self.names:
-                name_finds.append((i, word))
+            if word in self.names.keys():
+                name_finds.append((i, word, self.names[word]))
                 found = True
-                if self.prints:
+                if self.prints or self.interactive_adapt:
                     print(f'found name \"{word}\"')
+                if self.interactive_adapt:
+                    if yes_no('is the name find correct in the following context? \n' + text + '\n'):
+                        self.change_name_rating(word, self.learning_rate)
+                    else:
+                        self.change_name_rating(word, -self.learning_rate)
             if found:
-                rating += 0.2
+                rating += self.names[word]
         for name_find in name_finds:
             for name_find_b in name_finds:
                 if name_find[0] + 1 == name_find_b[0]:
                     if self.prints:
                         print(f'found name \"{name_find[1]}\" followed by name \"{name_find_b[1]}\"')
-                    rating += 0.2
+                    rating += self.name_follow_name_rating
             if len(words) > name_find[0] + 1:
                 if re.match('[A-Z]\.', words[name_find[0]+1]): # searching for Capital letter and dot (Jonas H.)
-                    rating += 0.2
+                    rating += self.short_follow_name_rating
             if name_find[0] > 0:
                 if re.match('[A-Z]\.', words[name_find[0]-1]): # searching for Capital letter and dot (J. Hagge)
-                    rating += 0.2
+                    rating += self.name_follow_short_rating
         if self.interactive_add:
             candidates = [words[name_find[0]-1] for name_find in name_finds if name_find[0] > 0]
             candidates += [words[name_find[0]+1] for name_find in name_finds if len(words) > name_find[0] +1]
@@ -78,6 +101,14 @@ class NameFilter:
                         self.add_to_exclude(candidate)
 
         return rating
+
+    def change_name_rating(self, name, rating_change):
+        with open(self.name_file, 'r') as f:
+            text = ''.join([i for i in f]).replace(f'{name}, {self.names[name]}',
+                                                   f'{name}, {min(self.name_max_rating, max(self.name_min_rating, self.names[name] + rating_change))}')
+        with open(self.name_file, 'w') as f:
+            f.writelines(text)
+
 
 # Function for a Yes/No result based on the answer provided as an arguement
 # Taken from https://overlaid.net/2016/02/09/simple-yes-no-function-in-python/
