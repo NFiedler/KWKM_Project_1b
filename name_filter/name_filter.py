@@ -69,7 +69,8 @@ class NameFilter:
                 if self.prints or self.interactive_adapt:
                     print(f'found name \"{word}\"')
                 if self.interactive_adapt:
-                    if yes_no('is the name find correct in the following context? \n' + text + '\n'):
+                    formatted_text = text.replace(word, '\033[91m'+word+'\033[0m')
+                    if yes_no('is the name find correct in the following context? \n' + formatted_text + '\n'):
                         self.change_name_rating(word, self.learning_rate)
                     else:
                         self.change_name_rating(word, -self.learning_rate)
