@@ -1,0 +1,16 @@
+# Ignore user data
+data/
+
+# Python
+__pycache__
+
+# Jupyter
+.ipynb_checkpoints
+
+# TeX files
+*.aux
+*.bbl
+*.blg
+*.log
+*.synctex.gz
+*.pdf
