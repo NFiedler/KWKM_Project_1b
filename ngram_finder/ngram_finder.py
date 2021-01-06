@@ -33,15 +33,3 @@ class NGramFinder:
         filtered_tokens = [word for word in tokens if not word in exclude_words]
         filtered_tokens = [word for word in filtered_tokens if not word in nltk.corpus.stopwords.words('german')]
         return set(nltk.ngrams(filtered_tokens, n))
-
-ngf = NGramFinder()
-
-with open('../data/2020-11-20 Stadteingang Elbbruecken_Kommentare.csv', 'r') as f:
-    eb = list(csv.reader(f, delimiter=';'))
-    eb_t = [text[3] for text in eb]
-    count = ngf.get_ngram_count(eb_t, 2, [])
-    print(max(count.values()))
-    for text, count in count.items():
-        if count >= 5:
-
-            print(text)
