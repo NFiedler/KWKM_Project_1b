@@ -2,6 +2,7 @@ import yaml
 import csv
 import re
 from nltk.tokenize import RegexpTokenizer
+import spacy
 
 class NameFilter:
     def __init__(self,
@@ -46,6 +47,11 @@ class NameFilter:
                 f.write(word + '\n')
 
     def classify(self, text: str) -> float:
+        # named entity recognition
+        # this is commented out, because it did not work well
+        # named_entity_recognition(text)
+
+
         rating = 0
         name_finds = []
         text = text.replace('\n', ' ')
@@ -126,3 +132,14 @@ def yes_no(answer):
         else:
            print("Please respond with 'yes' or 'no'")
 
+# We looked into Named Entity Recognition with spacy and used the dataset trained on wikipedia.
+# However this led to a lot of false positives, so it seems like this is not a good approach for us.
+# Especially because it is hard to parameterize
+def named_entity_recognition(sentence):
+    # https://spacy.io/api/annotation#ner-wikipedia-scheme
+    # We use the wikipedia scheme, above is the documentation for it.
+    nlp = spacy.load("de_core_news_sm")
+    doc = nlp(sentence)
+    for ent in doc.ents:
+        if ent.label_ == "PER":
+            print(ent.text, ent.label_)
