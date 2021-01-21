@@ -1,0 +1,17 @@
+<title>Name Finder</title>
+<h1>Name Finder</h1>
+
+{% if name_text %}
+<h2> Result: </h2>
+<p>
+{{ name_text | safe}}
+</p>
+
+Try another one!
+{% endif %}
+
+<form method="post">
+    Enter your text here! </br>
+    <textarea name="text" rows="4" cols="80"></textarea> </br>
+    <input type="submit">
+</form>

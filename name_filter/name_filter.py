@@ -46,7 +46,7 @@ class NameFilter:
             with open('exclude.txt', 'a') as f:
                 f.write(word + '\n')
 
-    def classify(self, text: str) -> float:
+    def classify(self, text: str, verbose=False):
         # named entity recognition
         # this is commented out, because it did not work well
         # named_entity_recognition(text)
@@ -67,6 +67,7 @@ class NameFilter:
         text = text.replace('-', ' ')
 
         words = self.tokenizer.tokenize(text)
+        candidates = []
         for i, word in enumerate(words):
             found = False
             if word in self.names.keys():
@@ -107,6 +108,8 @@ class NameFilter:
                     else:
                         self.add_to_exclude(candidate)
 
+        if verbose:
+            return {'rating': rating, 'candidates': [name[1] for name in name_finds]}
         return rating
 
     def change_name_rating(self, name, rating_change):
