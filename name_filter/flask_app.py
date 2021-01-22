@@ -8,8 +8,9 @@ def init():
 
     if request.method == 'POST':
         result = nameFilter.classify(request.form['text'], True)
-        if result['rating'] >= 2:
-            # candidates = 
+        threshold = float(request.form['threshold'])
+        rating = result['rating']
+        if rating >= threshold:
             name_text = f'{len(result["candidates"])} names found! </br>' + request.form['text']
             for candidate in result['candidates']:
                 name_text = name_text.replace(candidate, f'<font color="red">{candidate}</font>')
@@ -17,4 +18,6 @@ def init():
             name_text = 'No names found! </br>' + request.form['text']
     else:
         name_text = None
-    return render_template("name_test.html", name_text=name_text)
+        rating = None
+        threshold = None
+    return render_template("name_test.html", name_text=name_text, threshold=threshold, rating=rating)
