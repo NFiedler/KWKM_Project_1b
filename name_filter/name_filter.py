@@ -14,7 +14,8 @@ class NameFilter:
                  short_follow_name_rating=0.2,
                  learning_rate=0.2,
                  name_min_rating=0,
-                 name_max_rating=2
+                 name_max_rating=2,
+                 lowercase_decrease=0.2,
                  ):
         self.interactive_add = interactive_add
         self.interactive_adapt = interactive_adapt
@@ -25,6 +26,7 @@ class NameFilter:
         self.name_min_rating = name_min_rating
         self.name_max_rating = name_max_rating
         self.learning_rate=learning_rate
+        self.lowercase_decrease = lowercase_decrease
         self.name_file = 'names/namen.csv'
         with open(self.name_file, 'r') as f:
             self.names = {line[0]: float(line[1]) for line in csv.reader(f)}
@@ -70,19 +72,26 @@ class NameFilter:
         candidates = []
         for i, word in enumerate(words):
             found = False
-            if word in self.names.keys():
-                name_finds.append((i, word, self.names[word]))
+            # handle case_problems:
+            case_issue = False
+            case_word = str(word[0]).upper() + str(word[1:]).lower()
+            if word != case_word:
+                case_issue = True
+            if case_word in self.names.keys():
+                name_finds.append((i, word, self.names[case_word]))
                 found = True
                 if self.prints or self.interactive_adapt:
                     print(f'found name \"{word}\"')
                 if self.interactive_adapt:
                     formatted_text = text.replace(word, '\033[91m'+word+'\033[0m')
                     if yes_no('is the name find correct in the following context? \n' + formatted_text + '\n'):
-                        self.change_name_rating(word, self.learning_rate)
+                        self.change_name_rating(case_word, self.learning_rate)
                     else:
-                        self.change_name_rating(word, -self.learning_rate)
+                        self.change_name_rating(case_word, -self.learning_rate)
             if found:
-                rating += self.names[word]
+                rating += self.names[case_word]
+                if case_issue:
+                    rating -= self.lowercase_decrease
         for name_find in name_finds:
             for name_find_b in name_finds:
                 if name_find[0] + 1 == name_find_b[0]:
