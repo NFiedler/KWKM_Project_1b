@@ -3,7 +3,8 @@ import nltk
 
 class NGramFinder:
     def __init__(self):
-        nltk.download('stopwords')
+        #nltk.download('stopwords')
+        pass
 
     def get_n_m_gram_count(self, texts, n, m, exclude_words=list()):
         counts = dict()
