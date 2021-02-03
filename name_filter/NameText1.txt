@@ -1,0 +1,23 @@
+Als Mitbegründer des Wissensmanagements können die Japaner Ikujirō Nonaka und Hirotaka Takeuchi mit ihrem 1995 veröffentlichten Buch The Knowledge Creating Company (deutsch 1997 als Die Organisation des Wissens) angesehen werden. Aufbauend auf dem 1966 von Michael Polanyi vorgestellten Begriff des impliziten Wissens entwerfen sie ein Modell, bei dem Wissen in einer kontinuierlichen Transformation zwischen implizitem und explizitem Wissen erzeugt wird. Durch aufeinander folgende Prozesse der „Externalisierung“ (implizit zu explizit), „Kombination“ (explizit zu explizit), „Internalisierung“ (explizit zu implizit) und „Sozialisation“ (implizit zu implizit) wird Wissen innerhalb einer Organisation spiralförmig von individuellem Wissen auf höhere Organisationsstufen wie Personengruppen und ganze Firmen gehoben. Dieses als SECI-Modell bekannte Modell übte großen Einfluss auf die folgende Literatur und Forschung zum Thema Wissensmanagement aus. 2004 haben Nonaka und Takeuchi Wissensmanagement so definiert: "knowledge management is defined as the process of continuously creating new knowledge, disseminating it widely through the organization, and embodying it quickly in new products/services, technologies and systems".[5] (Deutsch: Wissensmanagement ist der Prozess der kontinuierlichen Erzeugung von Wissen, seiner weiten organisationalen Verbreitung, und dessen rascher Verkörperung in neuen Produkten, Dienstleistungen und Systemen)
+Merkmale des Wissensmanagements nach Probst/Raub/Romhardt[6]
+
+Die Bausteine des Wissensmanagements sind ein verbreitetes Modell und eine leicht anwendbare Methode um Wissen zu managen. Die Methode sieht 8 Bausteine vor, 6 davon bilden die Kernprozesse des Wissensmanagements, um diesen Kernprozessen einen orientierenden und koordinierenden Rahmen zu geben wurden 2 Bausteine (Wissensziele, Wissensbewertung) ergänzt. Die 6 Kernprozesse (Bausteine) bilden den „inneren“ Kreislauf, die strategischen den „äußeren“ Kreislauf. Diese 8 Bausteine sind:
+
+Wissensziele
+    Sie geben dem Wissensmanagement eine Richtung. In ihnen wird festgelegt, auf welchen Ebenen, welche Fähigkeiten aufgebaut werden sollen. Hierbei wird unterschieden in normative Wissensziele (diese wirken auf die Unternehmenskultur), strategische (sie zielen auf den zukünftigen Kompetenzbedarf der Organisation ab) und operative Wissensziele, die auf konkrete Umsetzung fokussieren.
+Wissensidentifikation
+    Bei diesem Baustein geht es um das Schaffen einer Transparenz über das interne und externe Wissensumfeld eines Unternehmens, dies Umfasst interne und externe Daten, Informationen und Fähigkeiten. Viele Unternehmen bekunden Mühe, den Überblick über intern und extern vorhandene Daten, Informationen und Fähigkeiten zu behalten. Aus diesem Grund muss ein effektives Wissensmanagement in hinreichendem Mass interne und externe Transparenz ermöglichen und den einzelnen Mitarbeitenden bei seinen Suchaktivitäten unterstützen.
+Wissenserwerb
+    Durch die Rekrutierung von Experten oder Akquisition von besonders innovativen Unternehmen können Firmen sich Know-how einkaufen, das sie aus eigener Kraft nicht entwickeln können. Etwas salopp formuliert: Zukaufen oder selbst entwickeln?
+Wissensentwicklung
+    Wissensentwicklung ist ein ergänzender Baustein zum Wissenserwerb. Jenes Wissen, das nicht durch den Baustein Wissenserwerb abgedeckt werden soll, muss intern entwickelt werden.
+Wissensverteilung
+    Die Kernfrage lautet: Wer sollte was in welchem Umfang wissen oder können und wie können die Prozesse der Wissens(ver)teilung erleichtert werden? Hierzu gibt es eine Vielzahl von Methoden wie zum Beispiel: Lessons Learned, After Action Review, Workshops, Jour fixe, Mentorenprinzip, Newsletter und vieles mehr.
+Wissensnutzung
+    Nutzung ist der produktive Einsatz organisationalen Wissens.
+Wissensbewahrung
+    Um wertvolle Sachkenntnisse zu erhalten, gilt es brauchbare Selektionsprozesse zu gestalten und sodann angemessen zu speichern wie auch zu aktualisieren.
+Wissensbewertung
+    Im Vordergrund steht hier die Erreichung der Wissensziele.
+
+Idealtypisch werden die Bausteine in einem Kreislauf abgearbeitet, in obenstehender Reihung der Bausteine, ausgehend von den Wissenszielen, wobei die Erkenntnisse aus der Wissensbewertung wieder in den Baustein Wissensziele einfließen. In der Realität tritt eine starke Vernetzung der Kernprozesse auf. 

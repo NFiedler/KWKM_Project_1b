@@ -1,0 +1,26 @@
+Ansätze zur Reifegradbewertung
+
+Reifegradmodelle für Wissensmanagement verfolgen das Ziel einer ganzheitlichen qualitativen oder quantitativen Beurteilung von Wissensmanagement-Aktivitäten und -Prozessen einer Organisation. Auf dieser Basis können dann Handlungsempfehlungen zur Erreichung eines höheren Reifegrades abgeleitet werden. Existierende Reifegradmodelle für Wissensmanagement basieren in der Regel auf dem Capability Maturity Model for Software (CMMI), einem fünfstufigen Prozessmodell zur quantitativen Beurteilung und Verbesserung des Reifegrades von Softwareentwicklungsprozessen in Organisationen, bzw. auf dessen europäischem Pendant SPICE. Derzeit existieren einige theoretische, zum Teil aber auch durch entsprechende Werkzeuge unterstützte Reifegradmodelle zur Beurteilung des WM-Reifegrades wie das Berztiss’ Capability Maturity for KM,[9] Kochikar’s Knowledge Management Maturity Model[10] oder das Knowledge Process Quality Model (KPQM).
+Knowledge Process Quality Model
+
+Das Knowledge Process Quality Model (KPQM) von Oliver Paulzen und Primoz Perc[11] wurde für die Reifegradbewertung von Wissensprozessen entwickelt und dient als Unterstützung für Wissensmanager. KPQM beschreibt die Entwicklung der Prozessreife auf sechs Stufen, die anhand von vier Entwicklungspfaden untersucht werden. Mit Hilfe der detaillierten Vorgabe von notwendigen Aktivitäten und Ergebnissen ist aus den Bewertungsergebnissen eine direkte Ableitung von priorisierten Maßnahmen für das Wissensmanagement möglich.
+
+Reifegradstufen:
+
+    0 Initial
+    1 Bewusst
+    2 Gesteuert
+    3 Standardisiert
+    4 Quantitativ gesteuert
+    5 Kontinuierliche Verbesserung
+
+Auf jedem Reifegrad werden zur Untersuchung der Wissensprozesse folgende Entwicklungspfade betrachtet:
+
+    Ablauforganisation
+    Mitarbeitereinsatz und Wissensnetzwerke
+    Akzeptanz und Motivation
+    Rechnerbasierte Unterstützung
+
+Prozessattribute (z. B. Ausbildung der Mitarbeiter und Führungskräfte), die jeder Reifegradstufe und jedem Entwicklungspfad zugeordnet sind, dienen der detaillierten Bewertung der Prozesse.
+
+Die Grundidee des Modells basiert auf dem SPICE-Modell (Software Process Improvement and Capability Determination) aus der Softwareentwicklung und berücksichtigt die Besonderheiten des Wissensmanagements durch die Einbeziehung spezifischer Wissensmanagements-Modelle. 
