@@ -21,3 +21,5 @@ Wissensbewertung
     Im Vordergrund steht hier die Erreichung der Wissensziele.
 
 Idealtypisch werden die Bausteine in einem Kreislauf abgearbeitet, in obenstehender Reihung der Bausteine, ausgehend von den Wissenszielen, wobei die Erkenntnisse aus der Wissensbewertung wieder in den Baustein Wissensziele einfließen. In der Realität tritt eine starke Vernetzung der Kernprozesse auf. 
+
+Text ausschnittsweise kopiert von: https://de.wikipedia.org/wiki/Wissensmanagement

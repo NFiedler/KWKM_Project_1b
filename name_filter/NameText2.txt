@@ -24,3 +24,5 @@ Auf jedem Reifegrad werden zur Untersuchung der Wissensprozesse folgende Entwick
 Prozessattribute (z. B. Ausbildung der Mitarbeiter und Führungskräfte), die jeder Reifegradstufe und jedem Entwicklungspfad zugeordnet sind, dienen der detaillierten Bewertung der Prozesse.
 
 Die Grundidee des Modells basiert auf dem SPICE-Modell (Software Process Improvement and Capability Determination) aus der Softwareentwicklung und berücksichtigt die Besonderheiten des Wissensmanagements durch die Einbeziehung spezifischer Wissensmanagements-Modelle. 
+
+Text ausschnittsweise kopiert von: https://de.wikipedia.org/wiki/Wissensmanagement
